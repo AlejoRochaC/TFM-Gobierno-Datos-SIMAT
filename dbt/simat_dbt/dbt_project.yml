@@ -42,4 +42,6 @@ models:
 
     informe:
       +schema: informe
-      +materialized: table
+      +materialized: view
+
+

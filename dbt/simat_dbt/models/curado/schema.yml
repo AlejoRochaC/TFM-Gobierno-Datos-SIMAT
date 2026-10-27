@@ -1,0 +1,190 @@
+version: 2
+
+models:
+  - name: dim_estudiantes
+    description: "Dimensión de estudiantes con información validada y depurada para consumo analítico."
+
+    meta:
+      owner: "Dirección de Cobertura y Equidad"
+      steward: "Administrador funcional SIMAT"
+      criticidad: "Alta"
+      dominio: "Estudiantes"
+
+    columns:
+
+      - name: id_estudiante
+        description: "Identificador único del estudiante."
+        tests:
+          - unique
+          - not_null
+
+      - name: numero_documento
+        description: "Número de documento validado."
+        meta:
+          dato_personal: true
+        tests:
+          - not_null
+
+      - name: codigo_sede
+        description: "Código DANE de la sede educativa."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_sedes')
+              field: codigo_sede
+
+      - name: codigo_municipio
+        description: "Código DANE del municipio."
+
+      - name: codigo_etc
+        description: "Entidad Territorial Certificada."
+        tests:
+          - not_null
+
+      - name: nombres
+        description: "Nombres del estudiante."
+        meta:
+          dato_personal: true
+
+      - name: apellidos
+        description: "Apellidos del estudiante."
+        meta:
+          dato_personal: true
+
+  - name: dim_sedes
+    description: "Dimensión de sedes educativas con información validada para consumo analítico."
+
+    meta:
+      owner: "Dirección de Cobertura y Equidad"
+      steward: "Administrador funcional SIMAT"
+      criticidad: "Alta"
+      dominio: "Sedes"
+
+    columns:
+
+      - name: codigo_sede
+        description: "Código DANE único de la sede."
+        tests:
+          - unique
+          - not_null
+
+      - name: codigo_municipio
+        description: "Municipio asociado."
+        tests:
+          - not_null
+
+      - name: codigo_etc
+        description: "Entidad Territorial Certificada."
+        tests:
+          - not_null
+
+      - name: estado
+        description: "Estado operativo de la sede."
+      
+  - name: dim_municipios
+    description: "Dimensión de municipios con información validada para consumo analítico."
+
+    meta:
+      owner: "Dirección de Cobertura y Equidad"
+      steward: "Administrador funcional SIMAT"
+      criticidad: "Alta"
+      dominio: "Municipios"
+
+    columns:
+
+      - name: codigo_municipio
+        description: "Código DANE único del municipio."
+        tests:
+          - unique
+          - not_null
+
+      - name: nombre_municipio
+        description: "Nombre oficial del municipio."
+
+      - name: codigo_etc
+        description: "Entidad Territorial Certificada."
+        tests:
+          - not_null
+
+      - name: fecha_carga
+        description: "Fecha de carga del registro."
+
+      - name: origen
+        description: "Sistema origen del dato."
+
+      - name: version_dato
+        description: "Versión del registro."
+  
+  - name: dim_etc
+    description: "Dimensión de Entidades Territoriales Certificadas."
+
+    meta:
+      owner: "Dirección de Cobertura y Equidad"
+      steward: "Administrador funcional SIMAT"
+      criticidad: "Alta"
+      dominio: "ETC"
+
+    columns:
+
+      - name: codigo_etc
+        description: "Código único de la ETC."
+        tests:
+          - unique
+          - not_null
+
+      - name: nombre_etc
+        description: "Nombre oficial de la ETC."
+
+      - name: fecha_carga
+        description: "Fecha de carga."
+
+      - name: origen
+        description: "Sistema origen."
+
+      - name: version_dato
+        description: "Versión del dato."
+
+  - name: fact_matriculas
+    description: "Tabla de hechos de matrículas para análisis institucional."
+
+    meta:
+      owner: "Dirección de Cobertura y Equidad"
+      steward: "Administrador funcional SIMAT"
+      criticidad: "Alta"
+      dominio: "Matrículas"
+
+    columns:
+
+      - name: id_matricula
+        description: "Identificador único."
+        tests:
+          - unique
+          - not_null
+
+      - name: id_estudiante
+        description: "Estudiante matriculado."
+        tests:
+          - relationships:
+              to: ref('dim_estudiantes')
+              field: id_estudiante
+
+      - name: codigo_sede
+        description: "Sede de la matrícula."
+        tests:
+          - relationships:
+              to: ref('dim_sedes')
+              field: codigo_sede
+
+      - name: codigo_municipio
+        description: "Municipio."
+        tests:
+          - relationships:
+              to: ref('dim_municipios')
+              field: codigo_municipio
+
+      - name: codigo_etc
+        description: "Entidad Territorial Certificada."
+        tests:
+          - relationships:
+              to: ref('dim_etc')
+              field: codigo_etc

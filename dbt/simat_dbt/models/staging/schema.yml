@@ -1,6 +1,7 @@
 version: 2
 
 models:
+
   - name: stg_estudiantes
     description: "Vista de estandarización de la información de estudiantes proveniente de la capa RAW."
 
@@ -8,22 +9,33 @@ models:
       owner: "Dirección de Cobertura y Equidad"
       steward: "Administrador funcional SIMAT"
       criticidad: "Alta"
+      dominio: "Estudiantes"
 
     columns:
 
       - name: id_estudiante
         description: "Identificador único del estudiante."
         tests:
-          - not_null
           - unique
-
-      - name: tipo_documento
-        description: "Tipo de documento del estudiante."
+          - not_null
 
       - name: numero_documento
-        description: "Número de documento."
+        description: "Número de documento del estudiante."
         meta:
           dato_personal: true
+        tests:
+          - not_null
+
+      - name: codigo_sede
+        description: "Código DANE de la sede educativa."
+        tests:
+          - not_null
+
+      - name: codigo_municipio
+        description: "Código DANE del municipio."
+
+      - name: codigo_etc
+        description: "Entidad Territorial Certificada."
         tests:
           - not_null
 
@@ -38,16 +50,139 @@ models:
           dato_personal: true
 
       - name: genero
-        description: "Sexo registrado del estudiante."
+        description: "Género del estudiante."
 
       - name: fecha_nacimiento
         description: "Fecha de nacimiento."
 
+      - name: fecha_carga
+        description: "Fecha de carga del registro."
+
+      - name: origen
+        description: "Sistema origen del dato."
+
+      - name: version_dato
+        description: "Versión del registro."
+
+  - name: stg_sedes
+    description: "Vista de estandarización de la información de sedes educativas proveniente de la capa RAW."
+
+    meta:
+      owner: "Dirección de Cobertura y Equidad"
+      steward: "Administrador funcional SIMAT"
+      criticidad: "Alta"
+      dominio: "Sedes"
+
+    columns:
+
       - name: codigo_sede
-        description: "Código DANE de la sede educativa."
+        description: "Código DANE de la sede."
+        tests:
+          - unique
+          - not_null
+
+      - name: nombre_sede
+        description: "Nombre oficial de la sede."
 
       - name: codigo_municipio
         description: "Código DANE del municipio."
+        tests:
+          - not_null
 
       - name: codigo_etc
         description: "Entidad Territorial Certificada."
+        tests:
+          - not_null
+
+      - name: estado
+        description: "Estado de la sede educativa."
+
+      - name: fecha_carga
+        description: "Fecha de carga del registro."
+
+      - name: origen
+        description: "Sistema origen del dato."
+
+      - name: version_dato
+        description: "Versión del registro."
+
+  - name: stg_etc
+    description: "Vista de estandarización de las Entidades Territoriales Certificadas."
+
+    meta:
+      owner: "Dirección de Cobertura y Equidad"
+      steward: "Administrador funcional SIMAT"
+      criticidad: "Alta"
+      dominio: "ETC"
+
+    columns:
+
+      - name: codigo_etc
+        description: "Código único de la Entidad Territorial Certificada."
+        tests:
+          - unique
+          - not_null
+
+      - name: nombre_etc
+        description: "Nombre oficial de la Entidad Territorial Certificada."
+
+      - name: fecha_carga
+        description: "Fecha de carga del registro."
+
+      - name: origen
+        description: "Sistema origen."
+
+      - name: version_dato
+        description: "Versión del dato."
+
+  - name: stg_matriculas
+    description: "Vista de estandarización de las matrículas."
+
+    meta:
+      owner: "Dirección de Cobertura y Equidad"
+      steward: "Administrador funcional SIMAT"
+      criticidad: "Alta"
+      dominio: "Matrículas"
+
+    columns:
+
+      - name: id_matricula
+        description: "Identificador único de la matrícula."
+        tests:
+          - unique
+          - not_null
+
+      - name: id_estudiante
+        description: "Identificador del estudiante."
+        tests:
+          - not_null
+
+      - name: codigo_sede
+        description: "Código de la sede."
+        tests:
+          - not_null
+
+      - name: codigo_municipio
+        description: "Código del municipio."
+        tests:
+          - not_null
+
+      - name: codigo_etc
+        description: "Código de la ETC."
+        tests:
+          - not_null
+
+      - name: anio
+        description: "Año académico."
+
+      - name: grado
+        description: "Grado matriculado."
+
+      - name: jornada
+        description: "Jornada."
+
+      - name: estado_matricula
+        description: "Estado de la matrícula."
+
+      - name: fecha_matricula
+        description: "Fecha de matrícula."

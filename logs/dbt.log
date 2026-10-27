@@ -1,0 +1,107 @@
+[0m23:41:56.331361 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270D148E780>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270D15DBE90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270D15D9880>]}
+
+
+============================== 23:41:56.335882 | def2c600-1f82-485c-adab-8b4693a73187 ==============================
+[0m23:41:56.335882 [info ] [MainThread]: Running with dbt=1.12.6
+[0m23:41:56.336378 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\User\\.dbt', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'invocation_command': 'dbt init simat_dbt', 'log_path': 'logs'}
+[0m23:41:56.502324 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\User\.dbt
+[0m23:41:56.510985 [debug] [MainThread]: Starter project path: D:\OneDrive - Universidad Europea de Madrid\TFM\TFM\.venv\Lib\site-packages\dbt\include\starter_project
+[0m23:41:56.546359 [info ] [MainThread]: Setting up your profile.
+[0m23:43:15.921937 [info ] [MainThread]: Profile simat_dbt written to C:\Users\User\.dbt\profiles.yml using target's profile_template.yml and your supplied values.
+[0m23:43:15.936763 [info ] [MainThread]: Running dbt debug to validate the project...
+[0m23:43:15.937257 [info ] [MainThread]: dbt version: 1.12.6
+[0m23:43:15.938262 [info ] [MainThread]: python version: 3.12.10
+[0m23:43:15.938262 [info ] [MainThread]: python path: D:\OneDrive - Universidad Europea de Madrid\TFM\TFM\.venv\Scripts\python.exe
+[0m23:43:15.938262 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m23:43:15.976552 [info ] [MainThread]: Using profiles dir at C:\Users\User\.dbt
+[0m23:43:15.976552 [info ] [MainThread]: Using profiles.yml file at C:\Users\User\.dbt\profiles.yml
+[0m23:43:15.977584 [info ] [MainThread]: Using dbt_project.yml file at D:\OneDrive - Universidad Europea de Madrid\TFM\TFM\simat_dbt\dbt_project.yml
+[0m23:43:15.978506 [info ] [MainThread]: adapter type: postgres
+[0m23:43:15.978963 [info ] [MainThread]: adapter version: 1.11.0
+[0m23:43:16.089208 [info ] [MainThread]: Configuration:
+[0m23:43:16.089821 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m23:43:16.090317 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m23:43:16.090813 [info ] [MainThread]: Required dependencies:
+[0m23:43:16.090813 [debug] [MainThread]: Executing "git --help"
+[0m23:43:16.135715 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m23:43:16.136365 [debug] [MainThread]: STDERR: "b''"
+[0m23:43:16.136874 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m23:43:16.137370 [info ] [MainThread]: Connection:
+[0m23:43:16.137866 [info ] [MainThread]:   host: localhost
+[0m23:43:16.138362 [info ] [MainThread]:   port: 5432
+[0m23:43:16.138362 [info ] [MainThread]:   user: postgres
+[0m23:43:16.139362 [info ] [MainThread]:   database: simat_demo
+[0m23:43:16.139362 [info ] [MainThread]:   schema: staging
+[0m23:43:16.139860 [info ] [MainThread]:   connect_timeout: 10
+[0m23:43:16.140362 [info ] [MainThread]:   role: None
+[0m23:43:16.140362 [info ] [MainThread]:   search_path: None
+[0m23:43:16.140859 [info ] [MainThread]:   keepalives_idle: 0
+[0m23:43:16.140859 [info ] [MainThread]:   sslmode: None
+[0m23:43:16.140859 [info ] [MainThread]:   sslcert: None
+[0m23:43:16.140859 [info ] [MainThread]:   sslkey: None
+[0m23:43:16.142346 [info ] [MainThread]:   sslrootcert: None
+[0m23:43:16.142346 [info ] [MainThread]:   application_name: dbt
+[0m23:43:16.143075 [info ] [MainThread]:   autocommit: False
+[0m23:43:16.143075 [info ] [MainThread]:   retries: 1
+[0m23:43:16.144067 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m23:43:16.551346 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m23:43:18.328002 [debug] [MainThread]: Using postgres connection "debug"
+[0m23:43:18.328824 [debug] [MainThread]: On debug: select 1 as id
+[0m23:43:18.328824 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m23:43:18.695039 [debug] [MainThread]: SQL status: SELECT 1 in 0.366 seconds
+[0m23:43:18.696084 [debug] [MainThread]: On debug: Close
+[0m23:43:18.696587 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m23:43:18.697104 [info ] [MainThread]: [32mAll checks passed![0m
+[0m23:43:18.697600 [info ] [MainThread]: Your new dbt project "simat_dbt" was created!
+Initialized new project in D:\OneDrive - Universidad Europea de Madrid\TFM\TFM\simat_dbt\simat_dbt
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m23:43:18.698097 [debug] [MainThread]: Command `dbt init` succeeded at 23:43:18.698097 after 82.49 seconds
+[0m23:43:18.699266 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m23:43:18.699266 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270D148E780>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270D1570D40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270D1EF1A30>]}
+[0m23:43:18.699893 [debug] [MainThread]: Flushing usage events
+[0m23:43:19.887622 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:22:26.651156 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A4DCEF9C40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A4DCEF8F20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A4DF953CE0>]}
+
+
+============================== 15:22:26.678476 | bdec80a6-d14b-4c98-809a-c4fc2fc6349b ==============================
+[0m15:22:26.678476 [info ] [MainThread]: Running with dbt=1.12.6
+[0m15:22:26.679966 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\User\\.dbt', 'invocation_command': 'dbt run --select dim_estudiantes', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_path': 'logs'}
+[0m15:22:26.680462 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path D:\OneDrive - Universidad Europea de Madrid\TFM\TFM\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m15:22:26.681467 [debug] [MainThread]: Command `dbt run` failed at 15:22:26.681467 after 0.18 seconds
+[0m15:22:26.682095 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A4E1565220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A4E1565070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A4DF347980>]}
+[0m15:22:26.682095 [debug] [MainThread]: Flushing usage events
+[0m15:22:26.745712 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:19:36.432826 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019B0BE52510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019B0B41A540>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019B0B6D57F0>]}
+
+
+============================== 22:19:36.450711 | bdaadaf7-7c1c-40fe-ba0f-814307012aca ==============================
+[0m22:19:36.450711 [info ] [MainThread]: Running with dbt=1.12.6
+[0m22:19:36.451112 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'maximum_seed_size_mib': '1', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\User\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'hints_enabled': 'True', 'invocation_command': 'dbt run --select vw_auditoria_carga', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'logs'}
+[0m22:19:36.451758 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path D:\OneDrive - Universidad Europea de Madrid\TFM\TFM\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m22:19:36.452751 [debug] [MainThread]: Command `dbt run` failed at 22:19:36.452751 after 0.13 seconds
+[0m22:19:36.452751 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019B0B41A540>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019B0D6F1970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019B0D8510A0>]}
+[0m22:19:36.453783 [debug] [MainThread]: Flushing usage events
+[0m22:19:36.500478 [debug] [MainThread]: An error was encountered while trying to flush usage events

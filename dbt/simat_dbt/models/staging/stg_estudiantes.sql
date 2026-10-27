@@ -2,7 +2,7 @@ SELECT
 
     id_estudiante,
     tipo_documento,
-    TRIM(numero_documento) AS numero_documento,
+    TRIM(TRAILING '.0' FROM CAST(numero_documento AS TEXT)) AS numero_documento,
     UPPER(TRIM(nombres)) AS nombres,
     UPPER(TRIM(apellidos)) AS apellidos,
     UPPER(TRIM(genero)) AS genero,

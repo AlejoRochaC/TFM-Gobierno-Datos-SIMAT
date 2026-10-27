@@ -1,0 +1,63 @@
+version: 2
+
+models:
+
+  - name: vw_matriculas
+    description: >
+      Vista consolidada para análisis institucional de las matrículas.
+      Integra la tabla de hechos con las dimensiones de estudiantes,
+      sedes, municipios y entidades territoriales certificadas.
+
+    meta:
+      owner: "Dirección de Cobertura y Equidad"
+      steward: "Administrador funcional SIMAT"
+      dominio: "Analítica"
+      criticidad: "Alta"
+
+    columns:
+
+      - name: id_matricula
+        description: Identificador de la matrícula.
+
+      - name: anio
+        description: Año académico.
+
+      - name: grado
+        description: Grado matriculado.
+
+      - name: jornada
+        description: Jornada académica.
+
+      - name: estado_matricula
+        description: Estado de la matrícula.
+
+      - name: genero
+        description: Género del estudiante.
+
+      - name: nombre_sede
+        description: Nombre de la sede educativa.
+
+      - name: nombre_municipio
+        description: Municipio donde se ubica la sede.
+
+      - name: nombre_etc
+        description: Entidad Territorial Certificada.
+
+  - name: vw_calidad_datos
+    description: >
+      Vista de indicadores de calidad y cobertura del modelo de datos.
+      Proporciona métricas de seguimiento sobre la información disponible
+      en la capa Curado.
+
+    meta:
+      owner: "Dirección de Cobertura y Equidad"
+      steward: "Administrador funcional SIMAT"
+      dominio: "Gobierno de Datos"
+      criticidad: "Alta"
+
+    columns:
+      - name: indicador
+        description: "Nombre del indicador."
+
+      - name: valor
+        description: "Valor calculado del indicador."
