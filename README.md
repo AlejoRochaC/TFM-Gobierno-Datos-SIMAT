@@ -4,7 +4,7 @@
 
 Este proyecto implementa un prototipo de **Gobierno de Datos** para el Sistema Integrado de Matrícula (SIMAT), empleando una arquitectura basada en tecnologías de código abierto para la generación, integración, transformación, aseguramiento de la calidad y visualización de la información.
 
-La solución fue desarrollada como parte del **Trabajo Fin de Máster (TFM)** del Máster Universitario en Ingeniería Informática de la Universidad Europea de Madrid.
+La solución fue desarrollada como parte del **Trabajo Fin de Máster (TFM)** del Máster Universitario en Análisis Masivo de Información de la Universidad Europea de Madrid.
 
 ---
 
