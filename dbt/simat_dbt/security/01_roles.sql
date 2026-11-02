@@ -1,0 +1,5 @@
+CREATE ROLE etc001 LOGIN PASSWORD 'etc001';
+
+CREATE ROLE analista LOGIN PASSWORD 'analista';
+
+CREATE ROLE administrador LOGIN PASSWORD 'admin';
